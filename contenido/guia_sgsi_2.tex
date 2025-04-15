@@ -1,0 +1,255 @@
+% !TEX root = ../Guia SGSI.tex
+
+\subsubsection{Normativa de control de acceso}
+
+\begin{enumerate}[label=\alph*)]
+
+    \item \textbf{Política de control de acceso lógico}
+
+    \Beneficiario{} seguirá las siguientes pautas para controlar el acceso lógico (a través de medios telemáticos):
+
+    \begin{itemize}
+      \item Se aplicarán controles de acceso en todos los niveles de la arquitectura y tipología de los Sistemas de Información de la Organización. Esto incluirá: redes, plataformas o sistemas operativos, bases de datos y aplicaciones. Los atributos de cada uno de ellos deberán reflejar alguna forma de identificación y autenticación, autorización de acceso, verificación de recursos de información y registro y monitorización de las actividades.
+      \item Los usuarios podrán acceder a los recursos necesarios para realizar las labores propias de su puesto. Los derechos de acceso a los mismos también serán los mínimos posibles en función de dichas necesidades.
+      \item El conocimiento y formación de los usuarios en el uso correcto de los medios de control de acceso será fundamental para garantizar la efectividad de la presente política y su desarrollo. Se deberán desarrollar actividades de formación y se establecerán medios para comunicar a los usuarios y diferentes responsables sobre el uso correcto de los medios de acceso a sistemas y servicios.
+      \item El uso de la informática móvil y teletrabajo deberá tener un nivel de seguridad equiparable al existente en el uso de equipos locales. Las medidas de seguridad a adoptar deberán tener en cuenta, en todo caso, los riesgos que este tipo de forma de trabajar puedan llevar implícitos como, por ejemplo, el entorno de trabajo en que estas actividades se desarrollen, que deberá ser adecuadamente protegido y los procesos de autenticación de usuarios y máquinas.
+      \item La implementación de los controles de acceso deberá tener en cuenta los tipos de accesos posibles y sus riesgos, la criticidad de la información que se aloje en ellos y los requisitos legales aplicables.
+      \item El acceso a los Sistemas de Información requerirá siempre de autenticación.
+      \item Los usuarios deberán siempre autenticarse como usuarios no privilegiados del sistema, excepcionalmente y sólo con fines de administración podrán autenticarse como administradores de este.
+      \item Todas las contraseñas asignadas a las cuentas de usuario deberán respetar la política de contraseñas detallada en el presente documento.
+      \item Los usuarios deberán usar la información y los sistemas de información, garantizando el nivel de seguridad adecuado según las directrices marcadas en las normas de uso de los sistemas de información.
+      \item Periódicamente se revisarán los derechos de acceso asignados a los usuarios para cada sistema y aplicaciones detallados en el alcance de este documento. Los derechos de acceso privilegiados deberán revisarse con una periodicidad menor. Además de lo anterior, deberá realizarse una revisión de los permisos de acceso correspondientes a un usuario siempre que esta sufra una modificación significativa de sus responsabilidades, posición o rol en la organización.
+    \end{itemize}
+
+    \item \textbf{Identificadores}
+
+    \Beneficiario{} debe establecer un procedimiento para definir los identificadores de sus usuarios según estas características:
+
+    \begin{itemize}
+      \item Su superior jerárquico autorizará la creación de un identificador de usuario, según el procedimiento de altas, bajas y modificaciones de permisos de usuarios.
+      \item No se permitirá el uso de identificadores de grupo o genéricos, salvo cuando sea estrictamente necesario y por razones operacionales. Esta circunstancia deberá estar debidamente justificada y aprobada formalmente, y se aplicarán los controles de seguridad precisos.
+      \item Los identificadores de usuarios anónimos y los identificadores por defecto estarán siempre deshabilitados.
+      \item Los identificadores no deberán dar indicios de nivel de privilegio asociado.
+      \item Cuando sea posible, se establecerán listas de control de acceso a los recursos de información.
+      \item Los identificadores, siempre que sea posible, deberán contar con una asignación y una fecha de validez, tras la cual se deshabilitarán.
+      \item Los usuarios serán responsables de todas las actividades realizadas con sus identificadores, contraseñas y dispositivos de acceso. Por lo tanto, no deberán permitir que otras personas los utilicen y conozcan.
+    \end{itemize}
+
+    \item \textbf{Política de contraseñas}
+
+    Las contraseñas (junto con el código de usuario o user-id) son el medio de acceso al sistema de información de \Beneficiario{}. Es necesario que las contraseñas que se utilicen como mecanismo de autenticación sean robustas para dificultar su vulneración.
+
+    \Beneficiario{} debe implementar una política de contraseñas siguiendo las siguientes normas de seguridad:
+
+    \tablacentrada{3.5cm}{
+        \titulofila{Generación de contraseñas}
+        \textbf{Longitud} & Deberán tener una longitud igual o superior a 10 caracteres. \\ \hline
+        \textbf{Complejidad} &
+        \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=0pt]
+          \item No deberán contener la información del usuario, como el DNI/NIE, nombre, apellidos, etc.
+          \item Deberán estar compuestas por al menos 3 de los siguientes 4 conjuntos de caracteres:
+          \begin{enumerate}[label=\arabic*., leftmargin=1em, topsep=0pt, itemsep=0pt]
+            \item Caracteres alfanuméricos en mayúsculas.
+            \item Caracteres alfanuméricos en minúsculas.
+            \item Caracteres numéricos.
+            \item Símbolos/caracteres especiales.
+          \end{enumerate}
+        \end{itemize} \\ \hline
+        \textbf{Repetición} & No deberán ser igual a ninguna de las 3 últimas contraseñas usadas. Se evitará usar contraseñas similares. \\ \hline
+        \textbf{Semántica} &
+        \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=0pt]
+          \item Repetición de caracteres.
+          \item Palabras del diccionario.
+          \item Secuencias simples de letras, números o secuencias de teclado.
+          \item Información que pueda asociarse fácilmente al usuario como nombres de familiares o mascotas, números de teléfono, matrículas, fechas o en general información biográfica del usuario.
+        \end{itemize} \\ \hline
+        \textbf{Precauciones} &
+        \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=0pt]
+          \item Se evitará apuntar las contraseñas en papel, enviarlas por medios electrónicos o almacenarlas sin cifrar.
+          \item Se mantendrá el carácter secreto.
+          \item No se reutilizarán contraseñas entre servicios.
+          \item Se reforzará la seguridad en función de la sensibilidad de la información.
+        \end{itemize} \\ \hline
+    }
+
+    \vspace{1em}
+
+    \tablacentrada{3.5cm}{
+        \titulofila{Distribución de contraseñas}
+        \textbf{Medio de entrega} & Las contraseñas iniciales deberán ser entregadas en mano o por medios que no permitan su acceso por personas no autorizadas. Si se usan medios electrónicos, se enviarán separadas del identificador. \\ \hline
+        \textbf{Contraseñas iniciales} & Se generarán automáticamente y deberán cambiarse en el primer acceso. \\ \hline
+    }
+
+    \vspace{1em}
+
+    \tablacentrada{3.5cm}{
+        \titulofila{Uso de contraseñas}
+        \textbf{Renovación} &
+        \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=0pt]
+          \item Deben renovarse al menos una vez al año, o más frecuentemente según la criticidad.
+          \item El sistema debe forzar el cambio o el usuario debe hacerlo manualmente.
+        \end{itemize} \\ \hline
+        \textbf{Cambio} &
+        \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=0pt]
+          \item Permitido tras olvido o bloqueo.
+          \item Cambio obligatorio tras cesión o compromiso.
+          \item Siempre comunicado directamente al usuario.
+        \end{itemize} \\ \hline
+        \textbf{Custodia} &
+        \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=0pt]
+            \item No se comunicarán por medios inseguros ni se escribirán en claro.
+        \end{itemize} \\ \hline
+        \textbf{Gestión} & Se usará una herramienta específica como KeePass o Lastpass, manteniéndola cifrada o protegida. \\ \hline
+    }
+
+    \vspace{1em}
+
+    \tablacentrada{3.5cm}{
+        \titulofila{Contraseñas en los sistemas}
+        \textbf{Pantalla} & No se mostrarán en claro. \\ \hline
+        \textbf{Salvapantalla} & Deberá estar protegido por contraseña tras inactividad. \\ \hline
+        \textbf{Por defecto} & Serán cambiadas o desactivadas. \\ \hline
+        \textbf{Recordar contraseña} & Se evitará usar esta función. \\ \hline
+        \textbf{Expiración automática} & Existirán mecanismos que obliguen al cambio. \\ \hline
+    }
+
+    \item \textbf{Inicio seguro de sesión}
+
+    El acceso a los sistemas operativos de \Beneficiario{} está controlado por un proceso de inicio de sesión seguro diseñado para minimizar los intentos de accesos no autorizados, y contará con las siguientes características:
+
+    \tablacentrada{3.5cm}{
+        \titulofila{Inicio seguro de sesión}
+        \textbf{Información del sistema} & Hasta que no se complete con éxito el proceso de autenticación, no se deberá mostrar ningún tipo de información del sistema (tal como identificadores del sistema o versiones de software instalado) que puedan ayudar a identificarlo, así como cualquier otro tipo de información que pueda facilitar su acceso no autorizado. \\ \hline
+        \textbf{Nº de intentos de acceso} & El número de intentos de acceso en los sistemas estará limitado a un máximo de 5 intentos. Además, la cuenta permanecerá bloqueada al menos entre 15 y 30 minutos desde el último intento fallido (en función de la criticidad del sistema). \\ \hline
+        \textbf{Tiempo de acceso} & Deberá limitarse el tiempo mínimo y máximo permitido para el proceso de acceso a los sistemas, como por ejemplo que se acceda durante el horario de oficina. Si se excede, el sistema deberá finalizar el proceso de acceso o “log in”. \\ \hline
+    }
+
+    \vspace{1em}
+
+    \item \textbf{Desconexión automática de terminales}
+
+    \Beneficiario{} dispone de controles que cierran las sesiones abiertas e inactivas durante un tiempo superior a 10 minutos, al menos, en los sistemas más sensibles y en los accesos privilegiados.
+
+    \item \textbf{Monitorización de accesos}
+
+    \Beneficiario{} no dispone de un procedimiento de monitorización de los sistemas para detectar accesos no autorizados y desviaciones, registrando eventos que suministren evidencias en caso de que se produzcan incidentes relativos a la seguridad. \Beneficiario{} debe implementar un sistema de monitorización de accesos para detectar intrusiones no autorizadas. Así, se tendrán en cuenta:
+
+    \tablacentrada{3.5cm}{
+        \titulofila{Monitorización de accesos}
+        \textbf{Registro de eventos} &
+        \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=0pt]
+            \item Intentos de acceso fallidos.
+            \item Bloqueos de cuenta.
+            \item Debilidad de contraseñas.
+            \item Normalización de identificadores.
+            \item Cuentas inactivas y deshabilitadas.
+            \item Últimos accesos a cuentas.
+        \end{itemize} \\ \hline
+        \textbf{Registro de uso de los sistemas} &
+        \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=0pt]
+            \item Accesos no autorizados.
+            \item Uso de privilegios.
+            \item Alertas de sistema.
+        \end{itemize} \\ \hline
+    }
+
+    \Beneficiario{} debe establecer las normas y mecanismos de protección para controlar los accesos a las redes que están incluidas en el alcance y asegurará que no se hace un uso indebido de sus recursos de información. Para ello se establecerán los siguientes controles:
+
+    \begin{itemize}
+        \item Interfaces apropiados entre la red corporativa de la Organización y las redes públicas.
+        \item Mecanismos de autenticación apropiados en los equipos de los usuarios.
+        \item Sistemas de control de acceso para restringir el acceso de los usuarios a la información.
+    \end{itemize}
+
+    \item \textbf{Utilización de las prestaciones del sistema}
+
+    La utilización de programas o utilidades que puedan eludir los controles de seguridad de los sistemas y aplicaciones estará restringido y estrechamente controlado. Se establecerán los siguientes controles que limitarán el uso de estas prestaciones en el sistema:
+
+    \begin{itemize}
+        \item Procesos de identificación, autenticación y autorización formales para el acceso a estas prestaciones.
+        \item Limitar el uso de prestaciones del sistema al mínimo número de usuarios posible.
+        \item Autorizar el uso de prestaciones con un propósito concreto.
+        \item Registrar siempre el uso de las prestaciones del sistema mediante el uso de eventos del sistema adecuadamente protegidos.
+        \item Definir y documentar los niveles de autorización para las prestaciones del sistema.
+    \end{itemize}
+
+    \item \textbf{Restricción de acceso a las aplicaciones}
+
+    Los usuarios recibirán el mínimo nivel de acceso a las aplicaciones necesario según sus funciones dentro de \Beneficiario{}, ya que un nivel de acceso por encima de dichas necesidades podría ocasionar un riesgo para la confidencialidad e integridad de la información. Para ello, se establecerán restricciones de los derechos de acceso de los usuarios (por ejemplo, lectura, escritura, borrado, ejecución) a través de cada aplicación.
+
+    Además, se garantizará que:
+    \begin{itemize}
+        \item No se comprometa la seguridad de otros sistemas con los que se compartan recursos.
+        \item Los equipos de los usuarios de \Beneficiario{} solo tendrán instaladas las aplicaciones estrictamente necesarias para la realización de sus tareas profesionales. \Beneficiario{} debe establecer una política de instalación mínima de aplicaciones para evitar software no deseado con potenciales vulnerabilidades susceptibles de ser explotadas por atacantes.
+        \item El acceso lógico a las aplicaciones y a la información tratada en ellas estará restringido únicamente a los usuarios autorizados. \Beneficiario{} debe establecer una política de acceso restringido a usuarios autorizados para proteger sus datos y aplicaciones de accesos no autorizados y exfiltraciones.
+    \end{itemize}
+
+    \item \textbf{Política de uso de los servicios de red}
+
+    Los usuarios de \Beneficiario{} únicamente tendrán acceso a aquellos servicios de red cuyo uso les haya sido específicamente autorizado. Para ello:
+    \begin{itemize}
+        \item Los servicios de red solo podrán utilizarse para la función para la que se han dispuesto, quedando prohibido su uso para otros cometidos o para llevar a cabo funciones fuera de las asociadas al puesto desempeñado.
+        \item Los privilegios asignados a los usuarios para acceder a las redes de \Beneficiario{} serán registrados y revisados por el responsable correspondiente, quien podrá solicitar información sobre los requisitos de acceso del usuario a los propietarios de las redes.
+        \item Se emplearán elementos de seguridad de red para garantizar las conexiones de los usuarios que se encuentran en redes internas, así como aquellas conexiones realizadas desde redes externas, en función del riesgo existente en cada una de estas conexiones. En este sentido, la Organización segregará sus redes de manera que se pueda restringir el acceso a los servicios proporcionados en los siete niveles de red definidos por el estándar OSI.
+        \item \Beneficiario{} debe implementar un sistema de VPN para el uso de conexiones seguras a través de redes públicas con la finalidad de evitar ataques Man in the Middle, intercepción de tráfico o robo de credenciales.
+        \item Para los accesos remotos a la red corporativa de \Beneficiario{}, se establecerán controles y mecanismos para tratar convenientemente la información transmitida, los sistemas y recursos accedidos, la identidad de las personas que realicen dichos accesos y las posibles implicaciones que el acceso en global conlleve.
+        \item \Beneficiario{} debe habilitar una DMZ para aislar sus servicios WEB más expuestos y proteger su red interna de ataques directos. Los accesos al resto de servicios de la Organización también deberán ser bloqueados mediante la configuración de las reglas de acceso en los cortafuegos establecidos al efecto.
+        \item Se registrarán y monitorizarán los accesos a las redes y servicios proporcionados por la Organización a fin de controlar y prevenir accesos no autorizados.
+    \end{itemize}
+
+    \item \textbf{Protección de los puertos de diagnóstico y configuración remota}
+
+    Gran parte de los equipos informáticos, sistemas de red y comunicaciones disponen de funcionalidades para el diagnóstico y configuración remota. Si estos sistemas no están bien protegidos se convertirán en puntos de acceso incontrolado.
+
+    Por tanto, los puertos de diagnóstico de los sistemas de \Beneficiario{} estarán controlados y protegidos frente a accesos no autorizados tanto a nivel físico como lógico.
+
+    \begin{itemize}
+        \item Los armarios y racks en el que se encuentren estos equipos estarán cerrados con llave para asegurar que no se produzcan accesos físicos no permitidos.
+        \item Los servidores y sistemas de comunicación de \Beneficiario{} tendrán abiertos los puertos estrictamente necesarios para su uso y explotación.
+        \item Los puertos, servicios y herramientas de configuración y diagnóstico instalados en equipos o dispositivos de red cuyo uso no sea necesario para los propósitos de \Beneficiario{} estarán deshabilitados.
+    \end{itemize}
+
+    \item \textbf{Segregación de redes}
+
+    Los sistemas de información de \Beneficiario{} no están segmentados en diferentes redes que permitan únicamente el tráfico necesario y autorizado.
+
+    \Beneficiario{} debe implementar una segmentación de redes mediante VLAN para separar el tráfico entre distintos grupos de usuarios y dispositivos y limitar la propagación de ataques potenciales.
+
+    A modo de ejemplo:
+    \begin{itemize}
+        \item Redes Internas: Redes propias de la Organización.
+        \item Redes de Acceso Internas: Conexiones desde las diferentes instalaciones propias y/o autorizadas de la Organización.
+    \end{itemize}
+
+    Los perímetros de seguridad entre cada VLAN se controlarán mediante el uso de dispositivos de red que gestionen el acceso y tráfico de información entre redes, bloqueando los accesos no autorizados.
+
+    \Beneficiario{} dispondrá de medidas de seguridad en las redes inalámbricas (Wifi) que garanticen la autenticidad, confidencialidad e integridad de la información que viaje a través de dicha red. La autenticación en la red WIFI usará contraseñas robustas para evitar ataques de fuerza bruta o de diccionario y evitar accesos no autorizados. Asimismo, el usuario deberá autenticarse en cada servicio proporcionado a través de la red WIFI.
+
+    \item \textbf{Control de conexiones a la red}
+
+    El control de las conexiones a la red se deberá realizar utilizando dispositivos de filtrado, ruteado y control a interconexión entre redes.
+
+    En el caso de redes compartidas, sobre todo las que se extienden a través de los límites de \Beneficiario{}, el control deberá llevarse a cabo mediante distintos dispositivos que regulen la capacidad de los usuarios de conectarse a y desde las redes de la Organización. Estos controles podrán comprender:
+
+    \begin{itemize}
+        \item \Beneficiario{} no dispone de sistemas proxy de control, registro y/o prohibición del tráfico entrante y saliente a internet. \Beneficiario{} debe implementar el uso de proxies para evitar accesos no autorizados y proteger su red interna.
+        \item \Beneficiario{} puede restringir el acceso a servicios fuera de horario laboral para limitar ventanas de entrada por parte de los atacantes.
+    \end{itemize}
+
+    \item \textbf{Control de enrutamiento de red}
+
+    Se realizarán controles de enrutamiento para garantizar que el tráfico transmitido a través de las redes de \Beneficiario{} sea el necesario y esté debidamente autorizado.
+
+    Estos controles de rutas se basarán en sistemas que permitan realizar un filtrado de información en base a la dirección de origen y dirección de destino (Ej. firewalls, routers, etc.).
+
+    \item \textbf{Control de la seguridad de red}
+
+    Las redes de \Beneficiario{} deberán estar permanentemente protegidas frente a amenazas. La Organización deberá realizar controles como:
+
+    \begin{itemize}
+        \item \Beneficiario{} debe implantar una política de escaneos de vulnerabilidades de sus redes internas y externas para detectar vectores de ataque usados por potenciales atacantes.
+        \item \Beneficiario{} debe realizar pruebas de pentesting en su infraestructura de red con la finalidad de asegurar una defensa continua contra nuevas amenazas.
+        \item \Beneficiario{} debe implantar herramientas de monitorización para su infraestructura con la finalidad de detectar comportamientos y actividades anómalas en su red corporativa.
+    \end{itemize}
+
+\end{enumerate}

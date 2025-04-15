@@ -1,0 +1,14 @@
+# Ignorar todo por defecto
+*
+
+# Permitir carpetas y su contenido
+!*/
+
+# Permitir todos los archivos .tex
+!**/*.tex
+
+# Permitir todas las imágenes .png
+!**/*.png
+
+# Excluir el archivo .gitignore para que se controle en el repositorio
+!.gitignore

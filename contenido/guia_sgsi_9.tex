@@ -1,0 +1,156 @@
+% !TEX root = ../Guia SGSI.tex
+
+\subsubsection{Seguridad de los servicios de red}
+
+Las conexiones no seguras a los servicios de red pueden afectar a la seguridad de \Beneficiario{}; por lo tanto, se controla el acceso a los servicios de red tanto internos como externos. Esto es necesario para garantizar que los usuarios que tengan acceso a las redes y a sus servicios no comprometan la seguridad de estos.
+
+Para llevar a cabo tales asignaciones de acceso a los servicios y recursos, el Responsable de Seguridad:
+
+\begin{itemize}
+    \item Identificará las redes y servicios de red a los cuales se permite el acceso para cada usuario del sistema.
+    \item Solicitará autorización para la asignación de accesos.
+    \item Monitorizará los accesos y el uso de los servicios de red.
+    \item Revisará, al menos trimestralmente, los derechos de acceso a redes y servicios de red de los usuarios.
+\end{itemize}
+
+\begin{enumerate}[label=\alph*)]
+
+\item \textbf{Controles de red}
+
+La capacidad de conexión (niveles de acceso) de los usuarios a las redes de la Organización se encontrará limitada a través de las correspondientes configuraciones de los sistemas de información:
+
+\begin{itemize}
+    \item Normativa interna.
+    \item Política de contraseñas.
+    \item Control de acceso basado en roles (RBAC): \Beneficiario{} debe implantar un control de acceso basado en roles (RBAC) para asegurar que los usuarios solo tengan acceso a la información y los recursos necesarios para realizar sus tareas.
+    \item Encriptación de las comunicaciones: La encriptación puede utilizarse para proteger las comunicaciones de la interceptación no autorizada.
+\end{itemize}
+
+Los técnicos de sistemas de \Beneficiario{} no establecen medidas técnicas para restringir la capacidad en las conexiones de los usuarios a las redes:
+
+\begin{itemize}
+    \item Segmentación de la red: \Beneficiario{} no divide la red en segmentos más pequeños a través de distintas VLAN para limitar el acceso de un usuario solo a la parte de la red que necesita para su trabajo.
+    \begin{itemize}
+        \item En las redes compartidas, especialmente aquellas que se extienden fuera de los límites de la Organización, se incorporan controles de enrutamiento (enrutamiento estático, Autenticación de protocolos de enrutamiento, NAT (Traducción de Direcciones de Red), Monitorización de redes, Protección inalámbrica) para asegurar que las conexiones informáticas y los flujos de información no violen la normativa de control de acceso.
+        \item El Departamento de Sistemas de \Beneficiario{} no revisa periódicamente la correcta configuración de los controles de enrutamiento, requiriendo para ello la información que los técnicos de sistemas obtengan directamente de los ficheros de configuración de los sistemas de comunicaciones.
+    \end{itemize}
+\end{itemize}
+
+\Beneficiario{} debe implementar una segmentación de su red corporativa mediante VLAN para limitar el acceso de los usuarios a los recursos estrictamente necesarios. Del mismo modo, debe realizarse una revisión periódica de los controles de enrutamiento para reforzar la privacidad de sus datos y limitar la propagación de potenciales ataques.
+
+Los equipos integrados en las redes de \Beneficiario{} están identificados de la siguiente manera:
+
+\begin{itemize}
+    \item Hostname y número de serie.
+    \item Dirección IP que lo identifica de forma única en el sistema.
+\end{itemize}
+
+\item \textbf{Diagnóstico remoto y protección de los puertos de configuración}
+
+Los sistemas de comunicación que requieran de monitorización por parte de los técnicos de sistemas se configurarán habilitando los puertos de diagnóstico y restringiendo su acceso.
+
+\item \textbf{Segregación de redes}
+
+\Beneficiario{} debe implementar una política de uso de VLAN para proteger su red corporativa restringiendo los accesos necesarios por área de trabajo para mitigar la propagación de ataques potenciales y accesos no autorizados.
+
+El Responsable de Seguridad se encargará de que existan mapas de red adecuados y detallados para cada una de las redes existentes, así como los sistemas de comunicaciones que las conforman. Estos mapas deberán ser revisados y actualizados convenientemente.
+
+En ellos, se incluirán las segmentaciones efectuadas respecto de los dominios existentes, los perímetros de seguridad lógicos controlados por cortafuegos o salvaguardas análogas.
+
+Los usuarios, administradores y el resto del personal de \Beneficiario{} deberán conocer los accesos estrictos para el desempeño de sus funciones, evitando accesos no autorizados o la posibilidad de estos, con especial importancia en redes de comunicación vulnerables o comprometidas como las redes inalámbricas.
+
+Cualquier cambio en el diseño de la actual arquitectura de segregación de redes dentro de \Beneficiario{} será autorizado por el Responsable de Seguridad, el cual, llegado el caso, evaluará la información técnica relacionada y procederá a la apertura del correspondiente Plan de Mejora.
+
+\item \textbf{Medidas básicas de seguridad para la protección de los servidores de correo electrónico}
+
+De forma general, se deberán aplicar las siguientes medidas de seguridad:
+
+\begin{itemize}
+    \item Políticas de contraseñas seguras, siguiendo las directrices marcadas por la política de contraseñas implantada en la organización.
+    \item \Beneficiario{} emplea el protocolo TLS, preferiblemente la versión más actual (TLS 1.3), para cifrar los datos durante el proceso de transmisión de información entre servidor y cliente, de forma que se proteja la información sensible de la interceptación malintencionada y se garantice la confidencialidad e integridad de las comunicaciones por correo electrónico de \Beneficiario{}.
+    \item \Beneficiario{} no aplica el cifrado de extremo a extremo como medida de seguridad avanzada para garantizar que sólo el destinatario previsto pueda descifrar el contenido. \Beneficiario{} debe implantar esta capa adicional de protección en especial cuando se transmiten datos sensibles o confidenciales por correo electrónico.
+    \item Configuración avanzada para evitar los ataques phishing:
+    \begin{itemize}
+        \item \Beneficiario{} debe implantar un registro SPF que contenga las direcciones IP de la Organización para protegerse contra suplantaciones de identidad y campañas de phishing.
+        \item \Beneficiario{} no aplica DKIM para asegurar que los correos provienen de un dominio autorizado y no han sido alterados para protegerse contra potenciales ataques de phishing.
+        \item \Beneficiario{} no dispone de políticas para redirigir los correos que no superen esta verificación a través de DMARC (Domain-based Message Authentication, Reporting, and Conformance). \Beneficiario{} debe implementar un sistema de redirección de correos no verificados para proteger la reputación de su dominio previniendo campañas de phishing y suplantaciones de identidad.
+    \end{itemize}
+\end{itemize}
+
+En una situación ideal, el servidor de envío adjunta una firma DKIM en el correo electrónico. El servidor de la Organización recupera el registro SPF para verificar la autorización del servidor de envío y comprueba la firma DKIM para asegurar la integridad del email. Si ambas comprobaciones son superadas, el email se considera legítimo. Si alguna comprobación falla, el servidor a través de la política DMARC decide si entregar, poner en cuarentena o rechazar el email.
+
+\item \textbf{Medidas preventivas de protección de la infraestructura de servidores y endpoints}
+
+Se deberán poner en práctica una serie de medidas preventivas que garanticen al menos una mínima defensa de la infraestructura, los servidores y los endpoints.
+
+Para ello, se deberán tener en cuenta las siguientes medidas de seguridad:
+
+\begin{itemize}
+    \item Actualizaciones periódicas de software y parches de seguridad de los servidores de forma periódica para reducir la exposición de vulnerabilidades conocidas. \Beneficiario{} debe implantar un procedimiento de actualizaciones que garantice que la infraestructura que alberga el sistema esté protegida de las amenazas conocidas.
+    \item Configuración y mantenimiento periódico del tráfico de red entrante y saliente. Un filtrado bien configurado y mantenido impide accesos no autorizados entre la red interna y las amenazas externas. Se deben realizar revisiones periódicas de las reglas del cortafuegos manteniendo al día los cambios existentes en el entorno de trabajo y teniendo en cuenta nuevas tendencias de seguridad que puedan surgir.
+    \item Supervisión y gestión: Se desplegarán soluciones de supervisión y gestión que funcionen con otras herramientas para la actualización y que proporcionen monitorización, acceso y control de forma directa y remota para gestionar código, actualizaciones, contraseñas, etc.
+    \item Zero trust (Política de confianza cero): Concepto relacionado con la configuración e instalación de dispositivos bajo la premisa y el principio del mínimo privilegio, es decir, no confiar en nada e ir añadiendo solo aplicaciones/equipos/direcciones fiables y autorizadas bajo autorización expresa del Responsable de Seguridad, siendo esta una política proactiva encaminada a la protección de los dispositivos que reduzca al máximo los posibles errores humanos producidos.
+\end{itemize}
+
+\item \textbf{Soportes físicos en tránsito}
+
+El transporte de activos de información deberá efectuarse conforme a unos mínimos exigibles de seguridad que aplicarán a todos los soportes físicos en tránsito. Así, \Beneficiario{} asegurará que dichos soportes y por ello, dicha información, llega a su destino cumpliendo con los estándares de seguridad, es decir, manteniendo intacta su confidencialidad, disponibilidad e integridad.
+
+\begin{itemize}
+    \item El Responsable de Seguridad debe ser el encargado de aplicar las medidas de seguridad oportunas a cada soporte físico en tránsito, dependiendo del nivel de seguridad aplicable a los datos o a la información que se transporte.
+    \item \Beneficiario{} debe establecer una política de cifrado en sus dispositivos físicos para garantizar la confidencialidad de la información en caso de robo o pérdida.
+\end{itemize}
+
+\item \textbf{Mensajería electrónica}
+
+Con el fin de mantener la protección sobre los mensajes de tipo electrónico, \Beneficiario{} asegurará la confidencialidad de su contenido en el tránsito de la información, estableciendo controles y sistemas que eviten el acceso o consulta no autorizados a dichos activos o la realización de actividades fraudulentas con ellos.
+
+Con el fin de mantener la protección sobre los activos participantes en las operaciones comerciales de tipo electrónico, la organización deberá asegurar la confidencialidad de su contenido en el tránsito de la información a través de redes públicas, estableciendo controles y sistemas que eviten el acceso o consulta no autorizados a dichos activos o la realización de actividades fraudulentas con ellos.
+
+A consecuencia de esto, \Beneficiario{} salvaguardará dicha confidencialidad mediante las siguientes medidas:
+
+\begin{itemize}
+    \item Determinar el nivel de seguridad aplicable a cada activo que interviene en las operaciones de comercio electrónico a fin de elevar o disminuir el nivel de protección conforme a dicha clasificación.
+    \item \Beneficiario{} debe implantar una política de encriptación de su documentación sensible para protegerla en caso de pérdida o interceptación por parte de potenciales atacantes.
+    \item \Beneficiario{} debe implantar una política de acuerdos de confidencialidad para garantizar los estándares de seguridad de su información corporativa por parte de terceros.
+    \item Cerciorarse de la correcta identificación del destinatario objetivo de la información mediante sistemas que identifiquen unívocamente a emisor y receptor (certificados digitales, firma electrónica, etc.)
+    \item Obtención de la autorización previa antes de utilizar sistemas externos como de mensajería electrónica o aplicaciones similares que puedan utilizarse en la organización, estableciendo niveles de acceso y de autenticación.
+\end{itemize}
+
+\item \textbf{Acuerdos de intercambio}
+
+\Beneficiario{} deberá realizar contratos o acuerdos de intercambio para sellar el proceso de transferencia de información de una entidad a otra. En los mismos se deberá reflejar el compromiso de ambas partes con la seguridad, asegurando la protección de la información en todo momento, así como las responsabilidades adquiridas por cada una de las partes firmantes de dicho acuerdo.
+
+A su vez, dicho acuerdo respetará la legislación vigente que aplica a dicho intercambio de información, como pueden ser la protección de datos, el copyright o las licencias de software, por poner un ejemplo. Otras medidas complementarias que se podrán implementar son:
+
+\begin{itemize}
+    \item Los responsables del envío, recepción y custodia de la información.
+    \item Sistemas para asegurar la trazabilidad y no repudio (confirmación de lectura, acuse de recibo).
+    \item Políticas de envío de paquetes / documentación según criticidad, acuerdo de envíos y depósitos, así como transportistas autorizados.
+    \item Responsabilidades en caso de pérdida de datos.
+    \item Sistema de etiquetado de información para datos críticos.
+    \item Sistemas de grabación de datos y software utilizados, junto con los controles adicionales y criptográficos a utilizar.
+    \item Control de niveles de acceso, así como mantenimiento de la cadena de custodia en la información en tránsito.
+\end{itemize}
+
+\item \textbf{Acuerdos de confidencialidad o no revelación}
+
+A fin de preservar la seguridad de la información manejada en la organización, \Beneficiario{} se asegura de que sus empleados se comprometan con dicha seguridad antes incluso del inicio de la actividad laboral. Por ello, la organización a la hora de incorporar personal a la misma se encargará de que la redacción y firma del contrato laboral incluya el establecimiento de firma de un acuerdo de compromiso con la seguridad de la información con el trabajador como medida preventiva de seguridad antes del desempeño de sus funciones.
+
+Al finalizar la relación laboral con un empleado, \Beneficiario{} revisa los casos en los que se hubieran definido cláusulas de confidencialidad o acuerdos contractuales, que contemplaran relaciones sujetas a confidencialidad posterior a la finalización de la contratación.
+
+En estos casos, de detectarse incumplimiento por parte del extrabajador o empleado de los acuerdos establecidos que pudieran comprometer la seguridad de la información de la organización, el Responsable de Seguridad lo pondrá en conocimiento de la Dirección con la finalizar de incoar el proceso disciplinario aplicable.
+
+Estos acuerdos también deberán ser de aplicación a terceros en caso de que puedan acceder a información de \Beneficiario{} debido a relaciones contractuales o ejecuciones de actividades y/o proyectos, para lo cual deberá:
+
+\begin{itemize}
+    \item Identificarse la información objeto de protección.
+    \item Definición del tiempo del acceso o del acuerdo y los casos que este compromiso deba ser indefinido.
+    \item Firma del acuerdo por responsables autorizados.
+    \item Definición de la propiedad de la información para establecer controles y limitaciones (propiedad intelectual o derechos de la información).
+    \item Derechos para auditar y monitorizar dichos procesos de tránsito de información o el uso de información confidencial por parte de las partes.
+    \item Sistemas de notificación de incidencias o debilidades en el uso de la información, así como las acciones a llevar a cabo en caso de producirse un problema.
+    \item Medidas a implementar de devolución o destrucción de la información en caso de finalización de la colaboración o motivos que permitan la suspensión del acuerdo o contrato.
+\end{itemize}
+
+\end{enumerate}

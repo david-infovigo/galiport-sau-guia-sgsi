@@ -1,0 +1,59 @@
+% !TEX root = ../Guia SGSI.tex
+
+\subsubsection{Procedimiento de protección de seguridad con mecanismos específicos anti-ransomware}
+
+El ransomware es una extorsión que se realiza a través de un malware que se introduce en los dispositivos: ordenadores, portátiles y dispositivos móviles. Este software malicioso secuestra la información, impidiendo el acceso a la misma generalmente cifrándola, y solicitando un rescate a cambio de su liberación.
+
+Para evitar un incidente de ransomware se deben seguir las normativas establecidas previamente y hacer copias de seguridad periódicas y comprobar que es posible restaurarlas.
+
+\begin{enumerate}[label=\alph*)]
+
+\item \textbf{Copias de seguridad}
+
+\Beneficiario{} debe implementar un procedimiento para ordenar y regular la realización periódica y el almacenamiento de copias de seguridad de la información para garantizar la continuidad de sus actividades y la integridad de su información en caso de desastre.
+
+El procedimiento debe asegurar que:
+
+\begin{itemize}
+    \item Sea posible su recuperación ante su pérdida, robo, destrucción, corrupción, falsificación o modificación surgida como consecuencia de desastres, tratamientos no autorizados o fallos de los sistemas informáticos o errores humanos durante el tratamiento de la información.
+    \item Se preserve la confidencialidad e integridad de la información durante el tratamiento del que es objeto en la realización y gestión de las copias de seguridad y, en su caso, durante el tránsito de las copias de seguridad. Para lo cual debe ser cifrado por la herramienta de copias.
+    \item Se mantenga la información, para asegurar la conformidad con la legislación aplicable y los compromisos adquiridos con terceros, así como permitir la defensa ante eventuales reclamaciones de terceros y contar con elementos de prueba en caso de ejercitar acciones en sede jurisdiccional o voluntaria.
+\end{itemize}
+
+\item \textbf{Pruebas de recuperación}
+
+El Responsable de Sistemas de \Beneficiario{} verifica diariamente que las diversas operaciones de copia de seguridad realizadas desde la jornada laboral anterior se han producido de la forma, con la precisión y en el tiempo esperado. Para facilitar esta tarea, si una copia de seguridad ha fallado, se notifica al responsable para que pueda remediar esta situación inmediatamente.
+
+Además, se asegura la realización de recuperaciones de información de forma aleatoria, de cara a comprobar el correcto funcionamiento de los sistemas de copia, así como el estado de los soportes en los que se almacenan las copias.
+
+El Responsable de Sistemas de Información suspende temporalmente esta medida de precaución cuando la frecuencia y dispersión de los procesos de recuperación sea tal que demuestre fehacientemente un correcto funcionamiento de los sistemas de copia y de los soportes utilizados.
+
+En cualquier caso, no transcurren más de 6 meses sin realizar procesos de recuperación real o de verificación en los sistemas de copia de seguridad. A la vista de las incidencias que puedan detectarse, podrá ser necesario reconfigurar el hardware o el software de los sistemas de copias de seguridad o incluso revisar la estrategia de salvaguarda.
+
+\item \textbf{Recuperación puntual de la información}
+
+Cuando, como consecuencia de fallos de hardware o software, errores humanos o cualquier otra causa, se haya visto afectada la integridad o la disponibilidad de una información y sea necesaria su recuperación a un estado anterior lo más próximo posible al momento de la incidencia, \Beneficiario{} dispone de un proceso basado en los siguientes puntos:
+
+\begin{itemize}
+    \item El titular de la información a recuperar, o una persona autorizada, notifica la incidencia de acuerdo con el Procedimiento de Gestión ante Incidentes de Seguridad, a las personas en las que el Responsable de Sistemas de Información delegue las tareas de recuperación de información, indicando:
+    \begin{itemize}
+        \item Los activos de información a recuperar.
+        \item La ubicación exacta de los activos de información en cuestión.
+        \item La fecha y hora, así como la causa de la pérdida de integridad o disponibilidad de la información.
+        \item Las personas responsables de las tareas de recuperación:
+        \begin{itemize}
+            \item Comprobarán que el solicitante está autorizado a solicitar la recuperación de la información.
+            \item Localizarán la copia de seguridad que contiene la versión de la información a recuperar más cercana a la incidencia, requiriendo la colaboración del solicitante en caso de duda.
+            \item Restaurarán la información, ubicándola en su lugar de origen.
+            \item Comunicarán al solicitante el estado final de la operación de recuperación, indicando, en caso positivo, la fecha y hora de generación de la copia utilizada.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+La notificación y gestión de las incidencias de recuperación de la información sigue los cauces establecidos en el Procedimiento de gestión ante incidentes de seguridad.
+
+\item \textbf{Recuperación en caso de desastre}
+
+El procedimiento de recuperación de información en caso de pérdida masiva de integridad o disponibilidad provocada por una incidencia o contingencia de carácter grave se contempla en el Plan de continuidad de negocio.
+
+\end{enumerate}

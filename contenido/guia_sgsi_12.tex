@@ -1,0 +1,86 @@
+% !TEX root = ../Guia SGSI.tex
+
+\subsubsection{Procedimiento de actualización y parcheo periódico de software}
+
+\begin{enumerate}[label=\alph*)]
+
+\item \textbf{Análisis de vulnerabilidades}
+
+La aplicación de parches y actualizaciones en los sistemas de información es una medida de protección frente a debilidades conocidas en los sistemas. Estas debilidades podrían ser explotadas de forma maliciosa o provocar fallos en el normal funcionamiento ante la materialización de determinadas situaciones.
+
+Se puede requerir la actualización de sistemas o aplicación de parches en los siguientes casos:
+
+Avisos de fabricantes y proveedores, a nivel de:
+\begin{itemize}
+    \item Hardware
+    \item Software
+    \item Sistema Operativo
+    \item Bases de Datos
+    \item Identificación de vulnerabilidades no solventadas en los sistemas implantados.
+    \item Como parte de una operación de mantenimiento preventivo periódico.
+    \item Como resultado de acciones correctivas tras la detección de incidentes.
+\end{itemize}
+
+En servidores con cualquier Sistema Operativo, \Beneficiario{} utiliza una herramienta para gestionar actualizaciones automáticas manteniendo de esta forma un calendario de parcheos (SCCM) donde se establece el momento en el que deben instalarse actualizaciones en los servidores.
+
+\Beneficiario{} fija un plazo mensual de 30 días para realizar la operativa, salvo en el caso de vulnerabilidades críticas que requieran parcheado urgente, en cuyo caso se procede de inmediato o de la manera más rápida posible, garantizando eso si el proceso de vuelta atrás por si fuera necesario aplicarlo.
+
+Los técnicos asignados a esta operativa no están informados sobre las últimas vulnerabilidades, actualizaciones y parches publicados ni están suscritos a listas de información o boletines donde se publica información diariamente sobre las ultimas vulnerabilidades incorporadas al repositorio. \Beneficiario{} debe un implantar un sistema de comunicación con diversas fuentes para estar al tanto de las últimas vulnerabilidades y parches y evitar la explotación de las mismas con fines maliciosos.
+
+Una vez detectada la necesidad de actualización o parcheo se procede a la localización del paquete software recomendado por la fuente de información origen.
+
+Siempre que sea posible se utilizan parches o actualizaciones suministrados por el vendedor o fabricante del activo involucrado. En ningún caso se utilizan paquetes software de dudosa procedencia o que no estén recomendados por el vendedor o fabricante de forma oficial.
+
+\item \textbf{Aplicación de parches}
+
+\Beneficiario{} debe implementar una norma de actualizaciones y parcheos siguiendo las indicaciones que se mostrarán a continuación.
+
+Puestos de trabajo:
+
+\begin{itemize}
+    \item Identificar los parches necesarios para cada puesto de trabajo.
+    \item Descargar los parches de una fuente confiable.
+    \item Distribuir los parches a través de una solución de gestión de parches.
+    \item Instalar los parches en cada puesto de trabajo, esto puede hacerse automáticamente o requerir la intervención del usuario.
+    \item Verificar que los parches se hayan instalado correctamente en cada puesto de trabajo.
+\end{itemize}
+
+Electrónica de red:
+
+\begin{itemize}
+    \item Identificar los parches necesarios para cada dispositivo de red.
+    \item Descargar los parches del fabricante del dispositivo.
+    \item Probar los parches en un entorno de prueba si es posible.
+    \item Aplicar los parches a los dispositivos de red durante una ventana de mantenimiento para minimizar la interrupción del servicio.
+    \item Verificar que los parches se hayan instalado correctamente y que los dispositivos de red funcionen correctamente después de la instalación.
+\end{itemize}
+
+Todas las actualizaciones siguen una planificación de antemano, teniendo en cuenta si estas actualizaciones serán de carácter urgente o no.
+
+En caso de requerir de actualizaciones de emergencia, y que estas no puedan disponer de una planificación, se tiene en cuenta las siguientes consideraciones:
+
+\begin{itemize}
+    \item \textbf{Comunicación:} se informa a todas las partes interesadas sobre la necesidad del parche de emergencia, incluyendo el motivo, el tiempo estimado y el impacto potencial.
+    \item \textbf{Evaluación de riesgos:} se identifican los riesgos asociados con la aplicación del parche, así como los riesgos de no aplicarlo.
+    \item \textbf{Pruebas:} si es posible, se prueba el parche en un entorno de prueba antes de implementarlo. En una situación de emergencia, esto puede no ser posible, pero siempre es preferible cuando se puede hacer.
+    \item \textbf{Plan de respaldo:} se prepara un plan de respaldo en caso de que algo salga mal. Esto podría incluir una copia de seguridad del sistema o datos, o tener un plan para revertir el parche si causa problemas.
+    \item \textbf{Tiempo de inactividad:} algunos parches pueden requerir tiempo de inactividad, por lo que se planifica este tiempo para minimizar las posibles interrupciones.
+    \item \textbf{Documentación:} se documenta todo el proceso, incluyendo por qué se necesita el parche, qué acciones se realizarán, y cualquier problema encontrado y cómo se ha resuelto.
+    \item \textbf{Verificación:} después de aplicar el parche se verifica que todo funcione correctamente y que el problema que se suponía que el parche debía resolver se ha solucionado.
+\end{itemize}
+
+En caso de ser necesaria una parada del servicio que implique la correcta ejecución de la actividad corporativa, ésta se hace preferiblemente fuera del horario laboral y, en cualquier caso, cuando el impacto de dicha parada sea el menor posible. Si la parada del servicio no pudiese realizarse sin repercusión en la actividad normal, se comunica a todo el personal afectado. Esta comunicación incluye la fecha prevista para la actuación y una estimación de la duración de la parada.
+
+Se establece un orden y prioridad en los activos a los cuales se aplique una actualización, suponiendo en la mayoría de los casos que se dará prioridad a aquellos con más riesgo o que contengan información sensible o estratégica.
+
+Una vez realizado el cambio se comprueba que los requisitos de seguridad del sistema implicado no se han visto afectados por el mismo, realizando las correcciones oportunas en caso contrario.
+
+\item \textbf{Control del cambio, proceso de vuelta atrás}
+
+Antes de la instalación de un parche o actualización, \Beneficiario{} garantiza la restauración de los sistemas implicados a la situación anterior a la instalación de este, en lo que se conoce como Proceso de Vuelta Atrás o “Rollback”.
+
+El mecanismo de recuperación consiste en una copia de respaldo del servidor realizada con anterioridad, o bien en una secuencia de acciones a llevar a cabo que permita devolver el sistema a su estado anterior.
+
+En cualquier caso, esta secuencia deberá estar debidamente documentada.
+
+\end{enumerate}

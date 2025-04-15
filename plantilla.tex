@@ -16,6 +16,7 @@
 \usepackage{tabularx}
 \usepackage[table]{xcolor}
 \usepackage{colortbl}
+\usepackage{tcolorbox}
 
 % Datos del documento
 \title{GUÍA DE IMPLEMENTACIÓN DEL SISTEMA DE GESTIÓN DE LA SEGURIDAD DE LA INFORMACIÓN}
@@ -83,4 +84,23 @@
     \end{tabularx}
     \normalsize
   \end{minipage}
+}
+
+% Plantilla documento
+\newcommand{\documentoMarco}[1]{%
+  \begin{tcolorbox}[
+    colframe=black,
+    colback=white,
+    boxrule=0.8pt,
+    width=\textwidth,
+    sharp corners,
+    arc=0pt,
+  ]
+    \centering
+    \includegraphics[width=0.25\textwidth]{img/logotipo.png}
+
+    \vspace{1em}
+    \raggedright
+    #1
+  \end{tcolorbox}
 }

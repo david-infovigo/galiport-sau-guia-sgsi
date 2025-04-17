@@ -41,88 +41,123 @@
 
     \Beneficiario{} debe implementar una política de contraseñas siguiendo las siguientes normas de seguridad:
 
-    \tablacentrada{3.5cm}{
-        \titulofila{Generación de contraseñas}
-        \textbf{Longitud} & Deberán tener una longitud igual o superior a 10 caracteres. \\ \hline
-        \textbf{Complejidad} &
-        \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=0pt]
-          \item No deberán contener la información del usuario, como el DNI/NIE, nombre, apellidos, etc.
-          \item Deberán estar compuestas por al menos 3 de los siguientes 4 conjuntos de caracteres:
-          \begin{enumerate}[label=\arabic*., leftmargin=1em, topsep=0pt, itemsep=0pt]
-            \item Caracteres alfanuméricos en mayúsculas.
-            \item Caracteres alfanuméricos en minúsculas.
-            \item Caracteres numéricos.
-            \item Símbolos/caracteres especiales.
-          \end{enumerate}
-        \end{itemize} \\ \hline
-        \textbf{Repetición} & No deberán ser igual a ninguna de las 3 últimas contraseñas usadas. Se evitará usar contraseñas similares. \\ \hline
-        \textbf{Semántica} &
-        \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=0pt]
-          \item Repetición de caracteres.
-          \item Palabras del diccionario.
-          \item Secuencias simples de letras, números o secuencias de teclado.
-          \item Información que pueda asociarse fácilmente al usuario como nombres de familiares o mascotas, números de teléfono, matrículas, fechas o en general información biográfica del usuario.
-        \end{itemize} \\ \hline
-        \textbf{Precauciones} &
-        \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=0pt]
-          \item Se evitará apuntar las contraseñas en papel, enviarlas por medios electrónicos o almacenarlas sin cifrar.
-          \item Se mantendrá el carácter secreto.
-          \item No se reutilizarán contraseñas entre servicios.
-          \item Se reforzará la seguridad en función de la sensibilidad de la información.
-        \end{itemize} \\ \hline
-    }
+    \begin{table}[H]
+        \centering
+        \small
+        \tablacentrada{3.5cm}{
+            \titulofila{Generación de contraseñas}
+            \textbf{Longitud} & Deberán tener una longitud igual o superior a 10 caracteres. \\ \hline
+            \textbf{Complejidad} &
+            \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=0pt]
+            \item No deberán contener la información del usuario, como el DNI/NIE, nombre, apellidos, etc.
+            \item Deberán estar compuestas por al menos 3 de los siguientes 4 conjuntos de caracteres:
+            \begin{enumerate}[label=\arabic*., leftmargin=1em, topsep=0pt, itemsep=0pt]
+                \item Caracteres alfanuméricos en mayúsculas.
+                \item Caracteres alfanuméricos en minúsculas.
+                \item Caracteres numéricos.
+                \item Símbolos/caracteres especiales.
+            \end{enumerate}
+            \end{itemize} \\ \hline
+            \textbf{Repetición} & No deberán ser igual a ninguna de las 3 últimas contraseñas usadas. Se evitará usar contraseñas similares. \\ \hline
+            \textbf{Semántica} &
+            \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=0pt]
+            \item Repetición de caracteres.
+            \item Palabras del diccionario.
+            \item Secuencias simples de letras, números o secuencias de teclado.
+            \item Información que pueda asociarse fácilmente al usuario como nombres de familiares o mascotas, números de teléfono, matrículas, fechas o en general información biográfica del usuario.
+            \end{itemize} \\ \hline
+            \textbf{Precauciones} &
+            \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=0pt]
+            \item Se evitará apuntar las contraseñas en papel, enviarlas por medios electrónicos o almacenarlas sin cifrar.
+            \item Se mantendrá el carácter secreto.
+            \item No se reutilizarán contraseñas entre servicios.
+            \item Se reforzará la seguridad en función de la sensibilidad de la información.
+            \end{itemize} \\ \hline
+        }
+        \caption{Generación de contraseñas}
+        \label{tab:guia-sgsi-generación-contraseñas}
+        \normalsize
+    \end{table}
 
     \vspace{1em}
 
-    \tablacentrada{3.5cm}{
-        \titulofila{Distribución de contraseñas}
-        \textbf{Medio de entrega} & Las contraseñas iniciales deberán ser entregadas en mano o por medios que no permitan su acceso por personas no autorizadas. Si se usan medios electrónicos, se enviarán separadas del identificador. \\ \hline
-        \textbf{Contraseñas iniciales} & Se generarán automáticamente y deberán cambiarse en el primer acceso. \\ \hline
-    }
+    \begin{table}[H]
+        \centering
+        \small
+        \tablacentrada{3.5cm}{
+            \titulofila{Distribución de contraseñas}
+            \textbf{Medio de entrega} & Las contraseñas iniciales deberán ser entregadas en mano o por medios que no permitan su acceso por personas no autorizadas. Si se usan medios electrónicos, se enviarán separadas del identificador. \\ \hline
+            \textbf{Contraseñas iniciales} & Se generarán automáticamente y deberán cambiarse en el primer acceso. \\ \hline
+        }
+        \caption{Distribución de contraseñas}
+        \label{tab:guia-sgsi-distribución-contraseñas}
+        \normalsize
+    \end{table}
 
     \vspace{1em}
 
-    \tablacentrada{3.5cm}{
-        \titulofila{Uso de contraseñas}
-        \textbf{Renovación} &
-        \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=0pt]
-          \item Deben renovarse al menos una vez al año, o más frecuentemente según la criticidad.
-          \item El sistema debe forzar el cambio o el usuario debe hacerlo manualmente.
-        \end{itemize} \\ \hline
-        \textbf{Cambio} &
-        \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=0pt]
-          \item Permitido tras olvido o bloqueo.
-          \item Cambio obligatorio tras cesión o compromiso.
-          \item Siempre comunicado directamente al usuario.
-        \end{itemize} \\ \hline
-        \textbf{Custodia} &
-        \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=0pt]
-            \item No se comunicarán por medios inseguros ni se escribirán en claro.
-        \end{itemize} \\ \hline
-        \textbf{Gestión} & Se usará una herramienta específica como KeePass o Lastpass, manteniéndola cifrada o protegida. \\ \hline
-    }
+    \begin{table}[H]
+        \centering
+        \small
+        \tablacentrada{3.5cm}{
+            \titulofila{Uso de contraseñas}
+            \textbf{Renovación} &
+            \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=0pt]
+            \item Deben renovarse al menos una vez al año, o más frecuentemente según la criticidad.
+            \item El sistema debe forzar el cambio o el usuario debe hacerlo manualmente.
+            \end{itemize} \\ \hline
+            \textbf{Cambio} &
+            \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=0pt]
+            \item Permitido tras olvido o bloqueo.
+            \item Cambio obligatorio tras cesión o compromiso.
+            \item Siempre comunicado directamente al usuario.
+            \end{itemize} \\ \hline
+            \textbf{Custodia} &
+            \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=0pt]
+                \item No se comunicarán por medios inseguros ni se escribirán en claro.
+            \end{itemize} \\ \hline
+            \textbf{Gestión} & Se usará una herramienta específica como KeePass o Lastpass, manteniéndola cifrada o protegida. \\ \hline
+        }
+        \caption{Uso de contraseñas}
+        \label{tab:guia-sgsi-uso-contraseñas}
+        \normalsize
+    \end{table}
 
     \vspace{1em}
 
-    \tablacentrada{3.5cm}{
-        \titulofila{Contraseñas en los sistemas}
-        \textbf{Pantalla} & No se mostrarán en claro. \\ \hline
-        \textbf{Salvapantalla} & Deberá estar protegido por contraseña tras inactividad. \\ \hline
-        \textbf{Por defecto} & Serán cambiadas o desactivadas. \\ \hline
-        \textbf{Recordar contraseña} & Se evitará usar esta función. \\ \hline
-        \textbf{Expiración automática} & Existirán mecanismos que obliguen al cambio. \\ \hline
-    }
+    \begin{table}[H]
+        \centering
+        \small
+        \tablacentrada{3.5cm}{
+            \titulofila{Contraseñas en los sistemas}
+            \textbf{Pantalla} & No se mostrarán en claro. \\ \hline
+            \textbf{Salvapantalla} & Deberá estar protegido por contraseña tras inactividad. \\ \hline
+            \textbf{Por defecto} & Serán cambiadas o desactivadas. \\ \hline
+            \textbf{Recordar contraseña} & Se evitará usar esta función. \\ \hline
+            \textbf{Expiración automática} & Existirán mecanismos que obliguen al cambio. \\ \hline
+        }
+        \caption{Contraseñas en los sistemas}
+        \label{tab:guia-sgsi-contraseñas-sistemas}
+        \normalsize
+    \end{table}
 
     \item \textbf{Inicio seguro de sesión}
 
     El acceso a los sistemas operativos de \Beneficiario{} está controlado por un proceso de inicio de sesión seguro diseñado para minimizar los intentos de accesos no autorizados, y contará con las siguientes características:
 
-    \tablacentrada{3.5cm}{
-        \titulofila{Inicio seguro de sesión}
-        \textbf{Información del sistema} & Hasta que no se complete con éxito el proceso de autenticación, no se deberá mostrar ningún tipo de información del sistema (tal como identificadores del sistema o versiones de software instalado) que puedan ayudar a identificarlo, así como cualquier otro tipo de información que pueda facilitar su acceso no autorizado. \\ \hline
-        \textbf{Nº de intentos de acceso} & El número de intentos de acceso en los sistemas estará limitado a un máximo de 5 intentos. Además, la cuenta permanecerá bloqueada al menos entre 15 y 30 minutos desde el último intento fallido (en función de la criticidad del sistema). \\ \hline
-        \textbf{Tiempo de acceso} & Deberá limitarse el tiempo mínimo y máximo permitido para el proceso de acceso a los sistemas, como por ejemplo que se acceda durante el horario de oficina. Si se excede, el sistema deberá finalizar el proceso de acceso o “log in”. \\ \hline
-    }
+    \begin{table}[H]
+        \centering
+        \small
+        \tablacentrada{3.5cm}{
+            \titulofila{Inicio seguro de sesión}
+            \textbf{Información del sistema} & Hasta que no se complete con éxito el proceso de autenticación, no se deberá mostrar ningún tipo de información del sistema (tal como identificadores del sistema o versiones de software instalado) que puedan ayudar a identificarlo, así como cualquier otro tipo de información que pueda facilitar su acceso no autorizado. \\ \hline
+            \textbf{Nº de intentos de acceso} & El número de intentos de acceso en los sistemas estará limitado a un máximo de 5 intentos. Además, la cuenta permanecerá bloqueada al menos entre 15 y 30 minutos desde el último intento fallido (en función de la criticidad del sistema). \\ \hline
+            \textbf{Tiempo de acceso} & Deberá limitarse el tiempo mínimo y máximo permitido para el proceso de acceso a los sistemas, como por ejemplo que se acceda durante el horario de oficina. Si se excede, el sistema deberá finalizar el proceso de acceso o “log in”. \\ \hline
+        }
+        \caption{Inicio seguro de sesión}
+        \label{tab:guia-sgsi-inicio-sesión}
+        \normalsize
+    \end{table}
 
     \vspace{1em}
 
@@ -134,24 +169,31 @@
 
     \Beneficiario{} no dispone de un procedimiento de monitorización de los sistemas para detectar accesos no autorizados y desviaciones, registrando eventos que suministren evidencias en caso de que se produzcan incidentes relativos a la seguridad. \Beneficiario{} debe implementar un sistema de monitorización de accesos para detectar intrusiones no autorizadas. Así, se tendrán en cuenta:
 
-    \tablacentrada{3.5cm}{
-        \titulofila{Monitorización de accesos}
-        \textbf{Registro de eventos} &
-        \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=0pt]
-            \item Intentos de acceso fallidos.
-            \item Bloqueos de cuenta.
-            \item Debilidad de contraseñas.
-            \item Normalización de identificadores.
-            \item Cuentas inactivas y deshabilitadas.
-            \item Últimos accesos a cuentas.
-        \end{itemize} \\ \hline
-        \textbf{Registro de uso de los sistemas} &
-        \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=0pt]
-            \item Accesos no autorizados.
-            \item Uso de privilegios.
-            \item Alertas de sistema.
-        \end{itemize} \\ \hline
-    }
+    \begin{table}[H]
+        \centering
+        \small
+        \tablacentrada{3.5cm}{
+            \titulofila{Monitorización de accesos}
+            \textbf{Registro de eventos} &
+            \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=0pt]
+                \item Intentos de acceso fallidos.
+                \item Bloqueos de cuenta.
+                \item Debilidad de contraseñas.
+                \item Normalización de identificadores.
+                \item Cuentas inactivas y deshabilitadas.
+                \item Últimos accesos a cuentas.
+            \end{itemize} \\ \hline
+            \textbf{Registro de uso de los sistemas} &
+            \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=0pt]
+                \item Accesos no autorizados.
+                \item Uso de privilegios.
+                \item Alertas de sistema.
+            \end{itemize} \\ \hline
+        }
+        \caption{Monitorización de accesos}
+        \label{tab:guia-sgsi-monitorización-accesos}
+        \normalsize
+    \end{table}
 
     \Beneficiario{} debe establecer las normas y mecanismos de protección para controlar los accesos a las redes que están incluidas en el alcance y asegurará que no se hace un uso indebido de sus recursos de información. Para ello se establecerán los siguientes controles:
 

@@ -18,6 +18,7 @@
 \usepackage[table]{xcolor}
 \usepackage{colortbl}
 \usepackage{tcolorbox}
+\usepackage{caption}
 
 % Datos del documento
 \title{GUÍA DE IMPLEMENTACIÓN DEL SISTEMA DE GESTIÓN DE LA SEGURIDAD DE LA INFORMACIÓN}
@@ -101,7 +102,10 @@
     \includegraphics[width=0.25\textwidth]{img/logotipo.png}
 
     \vspace{1em}
-    \raggedright
-    #1
+    {\small % ← aquí reducimos el tamaño de todo el contenido
+      \raggedright
+      #1
+    }
+    \normalsize
   \end{tcolorbox}
 }
